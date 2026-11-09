@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <TurianDir Condition="'$(TurianDir)' == ''">$([MSBuild]::NormalizeDirectory('$(MSBuildThisFileDirectory)../../../Turian'))</TurianDir>
+    <BrickDir>$([MSBuild]::NormalizeDirectory('$(MSBuildThisFileDirectory)..'))</BrickDir>
+  </PropertyGroup>
+  <Import Project="$(TurianDir)Directory.Build.props" />
+</Project>

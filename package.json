@@ -1,0 +1,30 @@
+{
+  "id": "org.mass4.turian.audio.studio",
+  "version": "1.0.0",
+  "displayName": "Audio Mixer Studio",
+  "description": "Studio editor panel for controlling and metering audio during Play.",
+  "author": "MASS4",
+  "license": "MPL-2.0",
+  "scopes": ["studio"],
+  "categories": ["turian:editor"],
+  "keywords": ["audio", "mixer", "studio"],
+  "dependencies": {
+    "org.mass4.turian.audio": "^1.0.0"
+  },
+  "roles": {
+    "source": "Brick~/Source",
+    "tests": "Brick~/Tests",
+    "precast": "Brick~/Precast"
+  },
+  "exclude": [
+    "Brick~/Tests",
+    ".github",
+    ".gitignore",
+    ".local",
+    ".script-*.py",
+    ".script-*.cs",
+    ".script-*.sh",
+    ".script-*.ps1"
+  ],
+  "bake": "auto"
+}

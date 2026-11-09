@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(TurianDir)Turian/Editor/Core/Turian.Editor.Core.csproj" />
+    <ProjectReference Include="$(TurianDir)Gaya/Gaya.Sdk/Gaya.Sdk.csproj" />
+    <ProjectReference Include="$(BrickDir)../org.mass4.turian.audio/Brick~/Source/Turian.Audio/Turian.Audio.csproj" />
+    <ProjectReference Include="$(GuinevereLocalPath)/Guinevere.Excalibur/Guinevere.Excalibur.csproj" Condition="'$(GuinevereLocalPath)' != ''" />
+    <PackageReference Include="MASS4.Guinevere.Excalibur" Version="6.*" Condition="'$(GuinevereLocalPath)' == ''" />
+    <Compile Include="../../../Editor/**/*.cs" />
+  </ItemGroup>
+  <Target Name="PrecastEditorAssemblies" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(BrickDir)Brick~/Precast/lib" />
+  </Target>
+</Project>
